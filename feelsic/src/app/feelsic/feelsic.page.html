@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Feelsic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+ <ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-img class="myphoto" id = "img3" src={{feelsic.image}}></ion-img>  
+  </ion-row>
+ </ion-grid>
+
+ <ion-card>
+  <ion-card-header>
+    <ion-card-title>{{feelsic.songName}}</ion-card-title>
+    <ion-card-subtitle>{{feelsic.artistName}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-list>
+    <ion-item>
+      Anger: {{feelsic.emotions_percentage.anger}}
+    </ion-item>
+    <ion-item>
+      Disgust: {{feelsic.emotions_percentage.disgust}}
+    </ion-item>
+    <ion-item>
+      Fear: {{feelsic.emotions_percentage.fear}}
+    </ion-item>
+    <ion-item>
+      Joy: {{feelsic.emotions_percentage.joy}}
+    </ion-item>
+    <ion-item>
+      Sadness: {{feelsic.emotions_percentage.sadness}}
+    </ion-item>
+    <ion-item>
+      Surprise: {{feelsic.emotions_percentage.surprise}}
+    </ion-item>
+  </ion-list>
+ </ion-card> 
+
+ <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Lyrics</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        {{feelsic.lyrics}}
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Emotional Analysis</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        {{feelsic.chatGPTcomment}}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+

@@ -1,0 +1,39 @@
+
+<ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-button fill="clear">
+      {{ username }}
+      <ion-icon slot="start" name="person-circle"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button fill="clear" (click)="logout()">
+      Logout
+      <ion-icon slot="end" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Feelsic</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <div>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Record a Song!</ion-card-title>
+        </ion-card-header>
+        <ion-button (click) = "startRecording()" expand = "full">Start</ion-button>
+        <ion-button (click) = "stopRecording()" expand = "full">Stop</ion-button>
+      </ion-card>
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Previous Feelsics</ion-card-title>
+        </ion-card-header>
+          <ion-list>
+            <ion-item button *ngFor = "let f of iterableList" [routerLink]="['/tabs/feelsic/', f.id]">
+              {{ f.songName }}
+            </ion-item>
+          </ion-list>
+      </ion-card>
+  </div>
+</ion-content>

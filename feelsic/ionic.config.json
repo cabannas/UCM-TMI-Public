@@ -1,0 +1,7 @@
+{
+  "name": "Feelsic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

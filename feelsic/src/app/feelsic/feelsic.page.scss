@@ -1,0 +1,17 @@
+#img3{
+    width: 100%;
+    height: 30%;
+    align-items: center;
+}
+
+.myphoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
